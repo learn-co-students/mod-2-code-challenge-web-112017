@@ -10,11 +10,12 @@ class SuperheroesController < ApplicationController
   end
 
   def create
-    @superhero = Superhero.new(superhero_params)
     byebug
+    @superhero = Superhero.new(superhero_params)
     if @superhero.save
       redirect_to @superhero
     else
+      flash[:errors] = @superhero.errors.full_messages
       redirect_to new_superhero_path
     end
   end
@@ -26,6 +27,7 @@ class SuperheroesController < ApplicationController
     else
       @superheroes = Superhero.all.order('created_at DESC')
     end
+
   end
 
   def destroy
@@ -42,6 +44,6 @@ class SuperheroesController < ApplicationController
 
   private
   def superhero_params
-    params.require(:superhero).permit(:super_name, :name, superpowers_attributes: [:id] )
+    params.require(:superhero).permit(:super_name, :name, :superpower_id )
   end
 end

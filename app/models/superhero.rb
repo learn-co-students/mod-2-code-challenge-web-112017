@@ -1,10 +1,9 @@
 class Superhero < ApplicationRecord
   belongs_to :superpower
-  accepts_nested_attributes_for :superpower
+  validates :super_name, uniqueness: true
 
   def self.search(search)
-    where("name LIKE ?", "%#{search}%")
-    where("content LIKE ?", "%#{search}%")
+    where("super_name LIKE ?", "%#{search}%")
   end
 
 end
