@@ -1,0 +1,24 @@
+<% if flash[:error] %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(flash[:error].count, "error") %>
+      prohibited this post from being saved:
+    </h2>
+ 
+    <ul>
+    <% flash[:error].each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for @superhero do |f| %>
+  <%= f.label "Name" %>
+  <%= f.text_field :name%>
+  <%= f.label "Super Name" %>
+  <%= f.text_field  :super_name%>
+  <%= f.label "Super Power" %>
+  <%= f.collection_select :superpower_id, @superpowers, :id, :name%>
+  <%= f.submit %>
+<% end %>
