@@ -1,0 +1,22 @@
+<h1>Superhero Form:</h1>
+
+<div class="error_class">
+  <% if flash[:error]%>
+  <ul>
+    <% flash[:error].each do |error|%>
+    <li><%= error%> </li>
+  </ul>
+  <%end%>
+  <%end%>
+</div>
+
+
+<%=form_for @superhero do |f| %>
+<%=f.label :name%>
+<%=f.text_field :name%> <br>
+<%=f.label :super_name%>
+<%=f.text_field :super_name%> <br>
+<%=f.label "superpower"%>
+<%=f.collection_select :superpower_id, Superpower.all, :id, :name %> <br>
+<%=f.submit%>
+<%end%>
