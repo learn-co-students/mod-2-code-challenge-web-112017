@@ -1,0 +1,15 @@
+<% if flash[:errors] %>
+<% flash[:errors].each do |error| %>
+<p><%= error %></p>
+<% end %>
+<% end %>
+
+<%= form_for @superhero do |f| %>
+  <%= f.label :name %>:<br />
+  <%= f.text_field :name %><br /><br />
+  Super Name:<br />
+  <%= f.text_field :super_name %><br /><br />
+  Super Power:<br />
+  <%= f.collection_select(:superpower_id, @superpowers, :id, :name) %><br /><br />
+  <%= f.submit %>
+<% end %>
