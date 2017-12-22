@@ -1,0 +1,12 @@
+<h1><%= @superhero.super_name %></h1>
+<h3>Real name: <%= @superhero.name %></h3>
+<p>Superpower: <%= link_to @superhero.superpower.name, @superhero.superpower %></p>
+<p><%= link_to "Superheroes Home", superheroes_path %></p>
+
+
+
+<!-- The superhero show page should include the
+* superhero's name (eg. Peter Parker),
+* its super name (eg. Spider-Man), and
+* its superpower.
+* The superpower should link to the superpower show page. -->

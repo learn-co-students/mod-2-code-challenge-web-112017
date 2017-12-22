@@ -1,0 +1,14 @@
+<h1><%= @superpower.name %></h1>
+<p><%= @superpower.description %></p>
+
+  <% @superheroes.each do |hero| %>
+      <p><%= link_to hero.super_name, hero %></p>
+  <% end %>
+
+<p><%= link_to "Superpowers Home", superpowers_path %></p>
+<p><%= link_to "Superheroes Home", superheroes_path %></p>
+
+
+<!-- The superpower show page should have its
+* name and
+* description. -->
