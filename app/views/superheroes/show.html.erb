@@ -1,0 +1,9 @@
+<h1><%= @superhero.super_name %></h1>
+<p><b>Name:</b> <%= @superhero.name%></p>
+
+<p><b>Superpower:</b> <%=link_to @superhero.superpower.name, superpower_path(@superhero.superpower) %></p>
+
+<br>
+<%= button_to "Create Superhero", new_superhero_path, method: :get %>
+<%= button_to "View All Superheroes", superheroes_path, method: :get %>
+<%= button_to "View All Superpowers", superpowers_path, method: :get %>
