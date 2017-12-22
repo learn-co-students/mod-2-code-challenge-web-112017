@@ -1,0 +1,18 @@
+<% if flash[:error] %>
+  <% flash[:error].each do |err| %>
+    <h3><%= err %></h3> 
+  <%end%>
+<%end%>
+
+<h1>Create a New Superhero</h1>
+<%= form_for @superhero do |f| %>
+  Superhero's Real Name: <%= f.text_field :name, placeholder: "Real Name" %> <br>
+  Superhero's Alias: <%= f.text_field :super_name, placeholder: "Super Name" %> <br><br>
+  Choose Superpower ID: <%= f.collection_select :superpower_id, @superpowers, :id, :id %> <br><br>
+  <%= f.submit %>
+<%end%>
+
+
+
+<!-- The form should also allow each superhero should be created with only one of the existing superpowers.
+Make sure no two superheroes have the same super name. -->

@@ -1,10 +1,21 @@
 <h2>All Superheroes</h2>
+<b>Search by Superpower: </b>
+<%= form_tag(superheroes_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search]%>
+    <%= submit_tag "Search", :name => nil %>
+<% end %>
 
 <ul>
   <% @superheroes.each do |superhero| %>
     <li>
-      <%= superhero.super_name %>
+      <%= link_to superhero.super_name, superhero_path(superhero) %>
     </li>
     <br>
   <% end %>
 </ul>
+<p><%= link_to "Create New Superhero", new_superhero_path %></p>
+
+
+<!-- On the superheroes index page, a superhero's name should link to the superhero's show page. -->
+
+<!-- Add a filter to the index view of the superheroes. This will allow the visitor to search for an existing superpower and display all the superheroes with that superpower on the same view page. -->
