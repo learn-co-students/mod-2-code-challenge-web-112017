@@ -1,9 +1,16 @@
 <h2>All Superheroes</h2>
 
+<!--  Add a filter to the index view of the superheroes. This will allow the visitor to search for an existing superpower and display all the superheroes with that superpower on the same view page. -->
+<%= form_tag("/search", method: "get") do %>
+  <%= label_tag(:query, "Search for:") %>
+  <%= text_field_tag(:query) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
 <ul>
   <% @superheroes.each do |superhero| %>
     <li>
-      <%= superhero.super_name %>
+      <%=link_to superhero.super_name, superhero_path(superhero) %>
     </li>
     <br>
   <% end %>
