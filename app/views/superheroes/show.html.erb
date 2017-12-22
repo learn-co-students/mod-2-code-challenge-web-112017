@@ -1,0 +1,19 @@
+<% if flash[:error] %>
+  <ul>
+    <% flash[:error].each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
+</div>
+
+
+<h1><%= @superhero.name %> | <%= @superhero.super_name %></h1>
+
+<!-- Trying to display the superpower with link
+<% @superhero.superpowers.each do |superpower| %>
+<li><%=link_to superpower.name, superpower %></li>
+<% end %> -->
+
+
+<p><%= link_to @superhero.superpower.name, @superpower.name %></p>
