@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :superpowers, only: [:index]
-  resources :superheroes, only: [:index]
+  resources :superpowers
+  resources :superheroes
+
+  get 'superheroes/search', to: 'superheroes#search', as: 'search'
 
 end
