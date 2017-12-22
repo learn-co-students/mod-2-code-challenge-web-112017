@@ -1,0 +1,10 @@
+<ul>
+  <% @superheroes.each do |superhero| %>
+    <li>
+      <% if superhero.superpower = @superpower %>
+      <%= link_to superhero.super_name, superhero_path(superhero) %>
+      <%end %>
+    </li>
+    <br>
+  <% end %>
+</ul>
