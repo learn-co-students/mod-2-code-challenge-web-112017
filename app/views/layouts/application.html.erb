@@ -9,6 +9,14 @@
   </head>
 
   <body>
+    <div class="nav-bar">
+      <ul>
+        <li><%= link_to "HOME", root_url %></li>
+        <li><%= link_to "CREATE-A-HERO", new_superhero_path %></li>
+      </ul>
+    </div>
+
+
     <%= yield %>
   </body>
 </html>

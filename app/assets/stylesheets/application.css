@@ -13,3 +13,24 @@
  *= require_tree .
  *= require_self
  */
+
+.nav-bar > ul > li {
+  list-style: none;
+  width: 100%;
+  padding: 10px 0px 10px 0px;
+  font-family: "Arial Black", Gadget, sans-serif;
+  display: inline;
+  margin: 0px 5px 0px 5px;
+}
+
+.nav-bar {
+    background-color: darkgrey;
+    text-align: center;
+    padding: 10px 0px 10px 0px;
+
+}
+
+.nav-bar a {
+  text-decoration: none;
+  color: white;
+}
