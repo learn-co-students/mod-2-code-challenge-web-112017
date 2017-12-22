@@ -1,0 +1,8 @@
+<!-- The superhero show page should include the superhero's name (eg. Peter Parker),
+its super name (eg. Spider-Man), and its superpower. The superpower should link to the superpower show page.
+ -->
+
+<h1><%= @superhero.super_name %></h1>
+
+<strong>Name:</strong> <%= @superhero.name %><br>
+<strong>Super Power:</strong> <%= link_to @superhero.superpower.name, superpower_path(@superhero.superpower) %>
