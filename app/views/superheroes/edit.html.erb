@@ -8,5 +8,5 @@
 
     <%= f.collection_select :superpower_id, Superpower.order(:name),:id, :name, prompt: true %>
 
-    <%= f.submit "Add SuperHero" %>
+    <%= f.submit "Edit SuperHero" %>
   <% end %>
